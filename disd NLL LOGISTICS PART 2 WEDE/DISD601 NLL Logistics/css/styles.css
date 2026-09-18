@@ -1,0 +1,812 @@
+:root {
+  --neon-blue: #00f0ff;
+  --neon-cyan: #0d9488;
+  --dark-bg: rgba(10, 15, 30, 0.85);
+  --card-glow: rgba(0, 240, 255, 0.15);
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Futuristic Header & Navbar */
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--dark-bg);
+  backdrop-filter: blur(12px);
+  padding: 12px 30px;
+  border-radius: 50px;
+  margin: 20px auto;
+  max-width: 90%;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+nav img {
+  width: 55px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px var(--neon-blue);
+}
+
+/* Glowing Live Tag */
+.live-badge {
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 6px;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Call-to-action Button */
+nav a.nav-btn, .btn {
+  background: linear-gradient(135deg, #00f0ff, #0284c7);
+  color: #000;
+  font-weight: 700;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+}
+
+/* Cyber Headings */
+h1.cyber-title {
+  font-family: var(--font-heading);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px var(--neon-blue);
+  text-align: center;
+}
+
+h3.sub-tagline {
+  font-family: var(--font-heading);
+  color: var(--neon-blue);
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* Glassmorphism Cyber Cards */
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.cyber-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  width: 260px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px var(--card-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
+.cyber-card h3 {
+  font-family: var(--font-heading);
+  color: var(--neon-blue);
+  margin-top: 0;
+}
+/* Breathing/Floating Animation */
+.moving-hero-image {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15); /* Soft outer glow */
+  animation: hologramBreath 6s ease-in-out infinite; /* Apply the movement */
+  transition: box-shadow 0.3s ease; /* Transition for hover */
+}
+
+/* On mouse hover, the image glows brighter */
+.moving-hero-image:hover {
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.5); /* Strong cyber glow */
+}
+
+/* The Keyframe Animation definition */
+@keyframes hologramBreath {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85; /* Dims slightly at start */
+  }
+  50% {
+    transform: translateY(-15px) scale(1.02); /* Floats up and grows slightly */
+    opacity: 1; /* Brightens at the peak */
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85; /* Dims and floats back */
+  }
+}
+/* Compact & Framed Hero Section */
+.hero-scroll-wrapper {
+  position: relative;
+  max-width: 650px; /* Controlled, smaller width */
+  margin: 30px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(10, 15, 30, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(0, 240, 255, 0.15); /* Subtle cyber ambient glow */
+}
+
+/* Framed Image with Dampened Smooth Movement */
+.hero-scroll-wrapper img {
+  width: 100%;
+  height: 300px; /* Reduced realistic height */
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+/* Import Google Fonts for Futuristic Typography (2.3) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-blue: #2563eb;
+  --dark-bg: rgba(10, 15, 30, 0.88);
+  --card-bg: rgba(15, 23, 42, 0.75);
+  --text-main: #e2e8f0;
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+/* Base Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body); /* font-family (2.3) */
+  font-size: 16px;              /* font-size (2.3) */
+  line-height: 1.6;             /* line-height (2.3) */
+  letter-spacing: 0.5px;        /* letter-spacing (2.3) */
+  color: var(--text-main);      /* color (2.5) */
+  background-color: #0f172a;    /* background-color (2.5) */
+  background-attachment: fixed;
+}
+
+/* Floating Navigation Bar Layout (2.4) */
+header nav {
+  display: flex;                /* display (2.4) */
+  align-items: center;          /* align-items (2.4) */
+  justify-content: space-between;/* justify-content (2.4) */
+  background: var(--dark-bg);
+  backdrop-filter: blur(12px);
+  padding: 12px 30px;
+  border-radius: 50px;
+  margin: 20px auto;
+  max-width: 90%;
+  border: 1px solid rgba(0, 240, 255, 0.3); /* border (2.5) */
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2); /* box-shadow (2.5) */
+}
+
+nav img {
+  width: 55px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid var(--neon-cyan);
+  transition: transform 0.3s ease;
+}
+
+nav img:hover {
+  transform: scale(1.08); /* :hover pseudo-class (2.5) */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600; /* font-weight (2.3) */
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Hover, Focus, & Active Pseudo-Classes (2.5) */
+nav a:hover, nav a:focus {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+nav a:active {
+  transform: translateY(0);
+}
+
+/* LIVE Badge & Animation */
+.live-badge {
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Call To Action Buttons (2.5) */
+.btn, nav a.nav-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover, nav a.nav-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+/* About Page Dark Grey Background Container */
+.about-story {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 35px;
+  /* Dark grey semi-transparent background with frosted glass effect */
+  background: rgba(30, 41, 59, 0.85); 
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  /* Glowing cyan border for the futuristic edge */
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional: Subtle grey backdrop overlay for the main About page section */
+.about-hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+/* CSS Grid Layout for Cards (2.4) */
+.card-grid {
+  display: grid;                          /* display: grid (2.4) */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* grid layout (2.4) */
+  gap: 20px;                              /* gap (2.4) */
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 12px;                    /* border-radius (2.5) */
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);/* box-shadow (2.5) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 240, 255, 0.3);
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  color: var(--neon-cyan);
+  margin-top: 0;
+}
+
+/* CTA Section */
+.about-cta {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+/* ==========================================================================
+   1. BASE & TYPOGRAPHY STYLES (2.3)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-blue: #2563eb;
+  --dark-bg: rgba(20, 25, 35, 0.85);
+  --card-bg: rgba(15, 23, 42, 0.85);
+  --text-main: #e2e8f0;
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+  background-color: #0f172a;
+  background-attachment: fixed;
+}
+
+/* ==========================================================================
+   2. LAYOUT STRUCTURE (2.4)
+   ========================================================================== */
+
+/* Modern Floating Navigation Bar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--dark-bg);
+  backdrop-filter: blur(10px);
+  padding: 10px 30px;
+  border-radius: 50px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Service Card Container Grid / Flex Layout */
+.service-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+}
+
+/* ==========================================================================
+   3. VISUAL STYLES & INTERACTIVITY (2.5)
+   ========================================================================== */
+
+/* Logo Styling */
+nav img {
+  width: 55px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+nav img:hover {
+  transform: scale(1.08);
+}
+
+/* Navigation Links & Buttons */
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-family: 'Segoe UI', var(--font-body), sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: capitalize;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+nav a.nav-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+nav a.nav-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+}
+
+/* Live Badge & Pulsing Animation */
+.live-badge {
+  background-color: #ef4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Services Header & Intro Section */
+.services {
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+}
+/* Services Heading - Dark Charcoal / Slate Gray */
+.services h2 {
+  font-size: 32px;
+  font-family: var(--font-heading);
+  color: #1e293b; /* Dark slate color */
+  margin-bottom: 10px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2); /* Soft outline for readability against dark backgrounds */
+}
+
+.services-intro {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #cbd5e1;
+}
+
+/* Individual Service Cards with Dark Grey Background */
+.service-card {
+  background-color: rgba(30, 41, 59, 0.85); /* Semi-transparent dark slate grey */
+  backdrop-filter: blur(8px);
+  width: 280px;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 240, 255, 0.3);
+  background-color: rgba(40, 53, 72, 0.9); /* Slightly lighter grey on hover */
+}
+/* ==========================================================================
+   FUTURISTIC GALLERY STYLES
+   ========================================================================== */
+
+/* Header section text styling */
+.gallery {
+  padding: 40px 20px 10px 20px;
+  text-align: center;
+}
+
+.gallery h1 {
+  font-size: 36px;
+  font-family: var(--font-heading, sans-serif);
+  color: #00f0ff; /* Glowing cyan accent */
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+  margin-bottom: 8px;
+}
+
+.gallery p {
+  color: #e2e8f0;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Gallery Container (Responsive Flex Grid) */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Glassmorphism Card Style */
+.gallery-item {
+  background-color: rgba(15, 23, 42, 0.85); /* Dark slate background */
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s ease;
+  width: 320px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Hover Lift & Glow Effect */
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 240, 255, 0.8);
+  box-shadow: 0 12px 25px rgba(0, 240, 255, 0.35);
+}
+
+/* Image Uniformity */
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Card Headings */
+.gallery-item h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 12px 0 0 0;
+  letter-spacing: 0.5px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+/* ==========================================================================
+   CONTACT PAGE STYLES 
+   ========================================================================== */
+
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Outer Container Heading Fix */
+.contact h2 {
+  font-size: 36px;
+  font-family: var(--font-heading, sans-serif);
+  color: #00f0ff; /* Bright glowing cyan */
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.9);
+  margin-bottom: 10px;
+}
+
+.contact p {
+  color: #ffffff;
+  font-size: 18px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Dark shadow behind subtitle for readability */
+}
+
+/* Contact Cards Grid/Flex Container */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 35px;
+}
+
+/* Individual Glassmorphism Contact Card */
+.contact-card {
+  background-color: rgba(10, 15, 30, 0.92); /* Darker solid background for strong contrast */
+  backdrop-filter: blur(12px);
+  width: 260px;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 240, 255, 0.8);
+  box-shadow: 0 12px 25px rgba(0, 240, 255, 0.3);
+}
+
+/* Card Headings */
+.contact-card h3 {
+  color: #00f0ff; /* Cyan title text */
+  font-size: 22px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.contact-card p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #e2e8f0; /* Crisp light gray body text */
+  text-shadow: none;
+}
+/* ==========================================================================
+   WEDE5020 RESPONSIVE DESIGN & BREAKPOINTS (REQS 3.1 - 3.3)
+   ========================================================================== */
+
+/* --- 3.2 RELATIVE UNITS --- */
+html {
+  font-size: 16px; /* Base for rem units */
+}
+
+/* Fluid base typography & full-width scaling */
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 3.3 RESPONSIVE IMAGES --- */
+img, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   3.1 BREAKPOINTS & MEDIA QUERIES
+   ========================================================================== */
+
+/* --- TABLET BREAKPOINT (max-width: 900px) --- */
+@media screen and (max-width: 900px) {
+  
+  /* Navigation adjustment */
+  nav {
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  /* Font size scaling using relative units */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p  { font-size: 0.95rem; }
+
+  /* Grid layout adjustment: Switch from 3-column to 2-column */
+  .gallery-container,
+  .contact-container {
+    width: 95%;
+    gap: 1.25rem;
+  }
+
+  .gallery-item,
+  .contact-card {
+    width: 45%; /* Two cards per row */
+  }
+}
+
+/* --- MOBILE BREAKPOINT (max-width: 600px) --- */
+@media screen and (max-width: 600px) {
+
+  /* Header and Nav stacking */
+  nav {
+    max-width: 95%;
+    margin: 0.625rem auto;
+    padding: 0.938rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 0.625rem 0;
+  }
+
+  /* Typography adjustments for mobile viewports */
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+  p  { font-size: 0.875rem; }
+
+  /* Multi-column to Single-column conversion */
+  .gallery-container,
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .gallery-item,
+  .contact-card {
+    width: 90%; /* Single full-width card layout */
+  }
+}
